@@ -56,7 +56,7 @@ class AddReading(Resource):
       reading_time = req_data['readingTime']
       date_time_obj = parse(reading_date)
       date_obj = date_time_obj.date()
-      new_reading = Reading(username=username, my_reading=reading, reading_date=date_obj, reading_time=reading_time)
+      new_reading = Reading(username=username, my_reading=reading, reading_date=reading_date, reading_time=reading_time)
       db.session.add(new_reading)
       db.session.commit()
       return {"message": "Reading successfully added"}, 200
@@ -69,7 +69,7 @@ class GetDateData(Resource):
     readingdate = request.args.get('date')
     date_obj = parse(readingdate)
     # ORM query
-    data = Reading.query.filter_by(username=username, reading_date=date_obj).order_by(asc(Reading.reading_time)).all()
+    data = Reading.query.filter_by(username=username, reading_date=readingdate).order_by(asc(Reading.reading_time)).all()
     if not data:
       return {"message": "No Data Found for Selected Date"}, 500
     # The reading schema (through Marshmallow) converts the Python data structure to JSON format
