@@ -56,7 +56,7 @@ class AddReading(Resource):
       reading_time = req_data['readingTime']
       date_time_obj = parse(reading_date)
       date_obj = date_time_obj.date()
-      new_reading = Reading(username=username, my_reading=reading, reading_date=reading_date, reading_time=reading_time)
+      new_reading = Reading(username=username, my_reading=reading, reading_date=date_obj, reading_time=reading_time)
       db.session.add(new_reading)
       db.session.commit()
       return {"message": "Reading successfully added"}, 200
@@ -109,7 +109,7 @@ class GetRangeData(Resource):
 
     while start_date_obj < end_date_obj:
       for d in data:
-        if d.reading_date == start_date_obj:
+        if d.reading_date-timedelta(days=1) == start_date_obj:
           total = total + d.my_reading
           count = count + 1
       if count == 0 or total == 0:
