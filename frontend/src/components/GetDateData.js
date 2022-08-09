@@ -25,6 +25,8 @@ function GetDateData () {
         errorText: ''
     })
 
+    const username = sessionStorage.getItem('username')
+
     function handleResponse(response) {
         // setErrorMsg({
         //     errorNo: '',
@@ -38,7 +40,7 @@ function GetDateData () {
         setIsClicked(true);
         axios.get('/getdatedata', {
             params: {
-                username: sessionStorage.getItem('username'),
+                username: username,
                 date: dateValue 
             }
           })

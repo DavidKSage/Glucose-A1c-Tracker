@@ -107,9 +107,10 @@ class GetRangeData(Resource):
     if not data:
       return {"message": "No Data Found for Selected Range"}, 500
 
-    while start_date_obj < end_date_obj:
+    while start_date_obj <= end_date_obj:
+      
       for d in data:
-        if d.reading_date-timedelta(days=1) == start_date_obj:
+        if d.reading_date == start_date_obj:
           total = total + d.my_reading
           count = count + 1
       if count == 0 or total == 0:

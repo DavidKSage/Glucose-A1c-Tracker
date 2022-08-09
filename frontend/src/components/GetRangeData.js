@@ -25,6 +25,8 @@ function GetRangeData () {
         errorText: ''
     })
 
+    const username = sessionStorage.getItem("username")
+
     function handleResponse(response) {
         setData(response.data)
     }
@@ -34,7 +36,7 @@ function GetRangeData () {
         setIsClicked(true);
         axios.get('/getrangedata', {
             params: {
-            username: sessionStorage.getItem('username'),
+            username: username,
             startdate: dateValue[0],
             enddate: dateValue[1]
             }

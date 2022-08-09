@@ -24,6 +24,7 @@ function AddReading() {
 
     const [timeValue, onTimeChange] = useState('10:00 AM');
     
+    const username = sessionStorage.getItem('username')
     
     function handleChange(e) {
         setFormData({
@@ -46,7 +47,7 @@ function AddReading() {
             errorText: ''
         })
         axios.post('/addreading', {
-            username: sessionStorage.getItem('username'),
+            username: username,
             reading: formData.reading,
             readingDate: dateValue,
             readingTime: timeValue
