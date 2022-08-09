@@ -1,6 +1,0 @@
-.DS_Store
-frontend/node_modules/
-frontend/.eslintcache
-backend/Pipfile.lock
-.gitignore
-node_modules/
