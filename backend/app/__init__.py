@@ -15,8 +15,9 @@ ma = Marshmallow(app)
 api = Api(app)
 migrate = Migrate(app, db)
 load_dotenv()
+app.secret_key = os.getenv('SECRET_KEY')
 
 from app import routes, models
 
-app.secret_key = os.getenv('SECRET_KEY')
+
 

@@ -59,7 +59,7 @@ function RegisterPage() {
           })
         }
 
-        if (localStorage.getItem('isLoggedIn')) {
+        if (sessionStorage.getItem('isLoggedIn')) {
             return (
                 <Redirect to='/readingpage' />
             )

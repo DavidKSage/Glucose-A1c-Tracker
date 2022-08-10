@@ -34,9 +34,11 @@ function LoginPage() {
 
       function handleSubmit(event) {
         event.preventDefault();
+        // const username = formData.username
+        // const password = formData.password
         axios.post('/login', {
             username: formData.username,
-            password: formData.password
+            password: formData.password,
           })
           .then(handleResponse)
           .catch(error => {
