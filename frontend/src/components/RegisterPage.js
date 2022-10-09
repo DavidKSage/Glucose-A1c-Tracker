@@ -28,8 +28,8 @@ function RegisterPage() {
       }
       function handleResponse(response) {
             if (response.status === 200)
-                localStorage.setItem('isLoggedIn', 'True');
-                localStorage.setItem('username', formData.username);
+                sessionStorage.setItem('isLoggedIn', 'True');
+                sessionStorage.setItem('username', formData.username);
             setFormData({
                 fname: '',
                 lname: '',

@@ -84,11 +84,11 @@ function AddReading() {
               />
             </FormGroup>
                 <Row>
-                    <Col md={4}>
+                    <Col md={5}>
                         <Label>Reading Date</Label> <br />
                         <DatePicker onChange={onDateChange} value={dateValue} />
                     </Col>
-                    <Col md={3}></Col>
+                    <Col md={1}></Col>
                     <Col md={5}>
                         <Label>Reading Time</Label> <br />
                         <TimePicker onChange={onTimeChange} value={timeValue} disableClock={true}/>

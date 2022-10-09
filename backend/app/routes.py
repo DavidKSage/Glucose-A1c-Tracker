@@ -114,7 +114,8 @@ class GetRangeData(Resource):
           total = total + d.my_reading
           count = count + 1
       if count == 0 or total == 0:
-        break
+        start_date_obj += timedelta(days=1)
+        continue
       day_avg = total / count
       ret_data.append({'reading_date': start_date_obj.strftime('%m/%d/%Y'), 'day_avg': round(day_avg, 2)})
       start_date_obj += timedelta(days=1)

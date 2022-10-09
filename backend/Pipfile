@@ -16,6 +16,7 @@ python-dateutil = "*"
 requests = "*"
 python-dotenv = "*"
 psycopg2 = "*"
+packaging = "*"
 
 [requires]
 python_version = "3.8"
