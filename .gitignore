@@ -3,3 +3,7 @@
 /frontend/.pnp.js
 /frontend/package-lock.json
 /frontend/.eslintcache
+/backend/__pycache__/*.pyc
+/backend/app/__pycache__/*.pyc
+/backend/migrations/
+*.log
