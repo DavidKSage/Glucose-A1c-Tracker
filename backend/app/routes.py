@@ -67,7 +67,7 @@ class GetDateData(Resource):
   def get(self):
     username = request.args.get('username')
     readingdate = request.args.get('date')
-    date_obj = parse(readingdate)
+    # date_obj = parse(readingdate)
     # ORM query
     data = Reading.query.filter_by(username=username, reading_date=readingdate).order_by(asc(Reading.reading_time)).all()
     if not data:
