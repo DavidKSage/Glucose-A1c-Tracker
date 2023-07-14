@@ -17,6 +17,7 @@ requests = "*"
 python-dotenv = "*"
 packaging = "*"
 psycopg2-binary = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.8"
