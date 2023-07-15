@@ -6,5 +6,6 @@
 /backend/__pycache__/*.pyc
 /backend/app/__pycache__/*.pyc
 /backend/migrations/
-.env
+/backend/.env
+.gitignore
 *.log

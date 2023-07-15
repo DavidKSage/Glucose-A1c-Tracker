@@ -18,6 +18,7 @@ python-dotenv = "*"
 packaging = "*"
 psycopg2-binary = "*"
 flask-cors = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
